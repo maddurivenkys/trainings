@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap              # Defines the object to be Configmap 
+metadata:
+  name: myyamlmap
+#  namespace: default     # Can specify which namespace to relate
+data:
+  SKILL: devops
+  CLASS: kubernetes       # data to be stored     

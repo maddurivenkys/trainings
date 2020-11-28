@@ -1,0 +1,43 @@
+1. Install python3
+	yum install python3
+
+2. Install ansible
+	pip3 install ansible
+
+3. Check ansible version
+	ansible --version
+
+4. Ansible syntax
+	ansible -m <modules -a <arguments> 
+
+5. Ping the localhost
+	ansible -m ping localhost
+
+6. Create a file called testing
+	vi /root/testing
+
+7. Copy the file to another location
+	ansible -m copy -a "src=/root/testin dest=/usr/local/bin" localhost
+
+8. Remove git 
+	yum remove git -y
+
+9. Install git using ansible
+	 ansible -m yum -a "name=git state=present" localhost
+
+10. Install wget using ansible
+	 ansible -m yum -a "name=wget state=present" localhost
+
+11. Create ssh keypair
+	ssh-keygen
+
+12. Goto /root/.ssh
+
+13. copy id_rsa.pub and paste it in the /root/.ssh/authorized_keys file in remote server that you are trying to connect
+
+14. create a file called /etc/ansible/hosts
+
+15. Create a group [server], place your IP
+
+16. Execute the ping, copy ansible syntaxes
+	ansible -m ping server

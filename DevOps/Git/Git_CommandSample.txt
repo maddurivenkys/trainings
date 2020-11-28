@@ -1,0 +1,196 @@
+
+-- yum install git
+
+git config --list
+
+git config --global user.name shankarnj
+git config --global user.email shankarnj@yahoo.com
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+git commit File1.txt
+
+git commit -m "Pushed Updated File1.txt"
+
+
+git log
+
+---- Check the current branch
+git branch
+
+
+---- add branch project1_b1
+git branch project1_b1
+
+---- add branch project1_b2
+git branch project1_b2
+
+---- add branch "project1_b3" and switch to "project1_b3"
+git checkout -b project1_b3
+
+---- create file_3.txt in b3 branch
+echo 'New file in project1_b3 branch' > file_3.txt
+
+---- add file_3.txt in b3 branch at local repository
+git add .
+
+---- Commit the changes to local repository at branch project1_b3
+
+git commit -m "commit the file file_3.txt in project1_b3 branch"
+
+
+
+-- Switch to master
+
+git checkout master
+
+-- Verify the contents of master branch, you should see only master branch files
+
+ls -ltr
+
+---git remote add origin git@github.com:shankarnj/Project1.git
+---git@github.com:shankarnj/Project1.git
+---https://github.com/shankarnj/Project1.git
+
+git remote add origin https://github.com/shankarnj/Project1.git
+
+git remote -v 
+
+
+--To push the current branch and set the remote as upstream, use
+
+    git push origin master
+    
+    /*************************************************************************/
+    
+    Username for 'https://github.com': shankarnj
+    Password for 'https://shankarnj@github.com':
+    Enumerating objects: 9, done.
+    Counting objects: 100% (9/9), done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (9/9), 711 bytes | 711.00 KiB/s, done.
+    Total 9 (delta 0), reused 0 (delta 0)
+    remote:
+    remote: Create a pull request for 'master' on GitHub by visiting:
+    remote:      https://github.com/shankarnj/Project1/pull/new/master
+    remote:
+    To https://github.com/shankarnj/Project1.git
+     * [new branch]      master -> master
+    $
+    $
+
+    /*************************************************************************/
+
+
+    git push origin project1_b3
+    
+    Username for 'https://github.com': shankarnj
+    Password for 'https://shankarnj@github.com':
+    Enumerating objects: 4, done.
+    Counting objects: 100% (4/4), done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    remote:
+    remote: Create a pull request for 'project1_b3' on GitHub by visiting:
+    remote:      https://github.com/shankarnj/Project1/pull/new/project1_b3
+    remote:
+    To https://github.com/shankarnj/Project1.git
+     * [new branch]      project1_b3 -> project1_b3
+
+
+    /*************************************************************************/
+
+	Create a file "File3.txt"
+	
+	git add File3.txt
+	
+	git push origin master
+	
+	$ git push origin master
+	Username for 'https://github.com': shankarnj
+	Password for 'https://shankarnj@github.com':
+	Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 394 bytes | 394.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0)
+	To https://github.com/shankarnj/Project1.git
+	   81ac999..6ed5d8d  master -> master
+
+
+    /*************************************************************************/
+	Create a file at remote web site
+	
+	
+    /*************************************************************************/
+
+
+	Create a file "File5.txt"
+	
+	git add File5.txt
+	
+	git push origin master
+
+		Username for 'https://github.com': shankarnj
+		Password for 'https://shankarnj@github.com':
+		To https://github.com/shankarnj/Project1.git
+		 ! [rejected]        master -> master (fetch first)
+		error: failed to push some refs to 'https://github.com/shankarnj/Project1.git'
+		hint: Updates were rejected because the remote contains work that you do
+		hint: not have locally. This is usually caused by another repository pushing
+		hint: to the same ref. You may want to first integrate the remote changes
+		hint: (e.g., 'git pull ...') before pushing again.
+		hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+	git pull origin master
+	
+		remote: Enumerating objects: 4, done.
+		remote: Counting objects: 100% (4/4), done.
+		remote: Compressing objects: 100% (2/2), done.
+		remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+		Unpacking objects: 100% (3/3), done.
+		From https://github.com/shankarnj/Project1
+		 * branch            master     -> FETCH_HEAD
+		   6ed5d8d..1d69267  master     -> origin/master
+		Merge made by the 'recursive' strategy.
+		 File4_Remote | 1 +
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 File4_Remote
+		$
+		$
+		$ ls -ltr
+		total 20
+		-rw-r--r-- 1 e3010139 tpxes  17 Nov 22 21:21 File1.txt
+		-rw-r--r-- 1 e3010139 tpxes  16 Nov 22 21:33 File2.txt
+		-rw-r--r-- 1 e3010139 tpxes 170 Nov 22 23:26 File3.txt
+		-rw-r--r-- 1 e3010139 tpxes 229 Nov 22 23:36 File5.txt
+		-rw-r--r-- 1 e3010139 tpxes  30 Nov 22 23:40 File4_Remote
+
+    /*************************************************************************/
+	Create File6_Remote.txt at remote website
+	Create File6_Remote.txt again at local repository
+	
+	get add File6_Remote.txt
+	git commit -m "File6_Remote.txt local file" File6_Remote.txt
+	
+	git push origin master
+	
+		Username for 'https://github.com': shankarnj
+		Password for 'https://shankarnj@github.com':
+		To https://github.com/shankarnj/Project1.git
+		 ! [rejected]        master -> master (fetch first)
+		error: failed to push some refs to 'https://github.com/shankarnj/Project1.git'
+		hint: Updates were rejected because the remote contains work that you do
+		hint: not have locally. This is usually caused by another repository pushing
+		hint: to the same ref. You may want to first integrate the remote changes
+		hint: (e.g., 'git pull ...') before pushing again.
+		hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+	git pull origin master
+	git push origin master

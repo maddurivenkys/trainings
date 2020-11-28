@@ -1,0 +1,23 @@
+Sample Deployment
+--------------------------------
+
+Create kuard-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+spec:
+  containers:
+  - image: hellodk/kuard-amd64:1
+    name: kuard
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
+
+kubectl apply -f kuard-pod.yaml
+kubectl get pods
+kubectl describe pods kuard
+kubectl port-forward kuard 8080:8080
+access the application using http://localhost:8080

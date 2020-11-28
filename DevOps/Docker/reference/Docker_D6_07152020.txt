@@ -1,0 +1,65 @@
+1. See the logs
+	docker logs <container_ID>
+
+2. To see the logs and follow
+	docker logs -f <container_ID>
+
+3. Dockerfile creation
+	Dockerfile is a normal text file which has the keywords and instructions
+
+4. Sample Dockerfile syntaxes
+	FROM <BASE_IMAGE>
+	MAINTAINER <Author>
+	COPY <src and destination>
+	CMD <BOOT setup or init scripts>
+	RUN <Execute all the commands 
+		any command \	
+		any command>
+	EXPOSE <port>
+
+5. Dockerfile for httpd installation in centos
+	FROM centos:latest
+	MAINTAINER Vignesh
+	RUN yum install httpd -y
+	COPY application.html /var/www/html
+	CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+	EXPOSE 80
+   * Make sure to create application.html in you local host and input random strings to it
+
+6. Once the docker file is created, create an image out of it
+	docker build -t vignesh:v1 .
+
+7. Run a container with the image built
+	docker run -itd -P <image_ID>
+
+8. To enter a container, execute the below
+	docke exec -it <container_ID> /bin/bash
+
+9. To delete docker container
+	docker rm <containter_ID>
+   * Make sure to stop before deleting, else you will get an error
+
+10. Pushing to the registry
+	docker push <Repository_name:tag>
+    * Make sure to login in your sever before performing above, "docker login"
+
+11. Docker compose installation
+	*curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	*chmod +x /usr/local/bin/docker-compose
+	*ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+	*docker-compose --version
+
+12. docker-compose syntax
+	version
+	services:
+	  service 1
+		DB installation 
+		Varibales
+	  service 2
+		wordpress installation
+		to consume the database
+
+13. Wordpress installation on docker-compose
+	Attaching in the mail trail
+
+

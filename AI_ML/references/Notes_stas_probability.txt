@@ -1,0 +1,17 @@
+Notes on Stats and Probability
+
+Mutually exclusive means the events cannot both occur.
+For example, if i'm deciding which dress to wear to an event, that's a mutually exclusive decision. 
+I cannot wear both dresses; I must choose one. 
+
+Mutually inclusive means the events cannot occur independently.
+
+If I want to roll a die to get a number 6, the number 1 will be in the bottom.
+One can't happen without the other. These are mutually inclusive
+
+They're opposites. " mutually exclusive" means you cna't have both at once;
+if A is true, then B is false.
+For example, if Trump is elected, then Clinton can't be - they're mutually exclusive.
+
+Mutually inclusive, means you can't have one without the other, 
+if A is true , then B is true. For example, if I'm married to my wife. then she's married to me. 

@@ -1,0 +1,224 @@
+find factorial of a number 100
+
+Strings
+
+index starts at 0
+
+documentation about a function
+s.replace.__doc__
+
+print(s.replace.__doc__) // will format the output
+
+
+list
+
+5
+if(n==1) return n;
+
+fact * fact(n-1)
+
+
+Set ( implement these without using the below keywords)
+
+difference
+union
+intersection
+
+
+Home work
+
+Write program to Median package
+
+
+Numpy is written c ( Numerical python )
+ similar functions in tenserflow (runs GPU) and 
+ 
+ GPU has parellel processes can be used for training your data and faster computation and production level code will run on CPUs
+ 
+ GPUs are much cost expensive when compared to CPUs in terms of multiple processes
+ 
+ multi dimensional arrays are called tensers and hence name tenserflow
+ 
+ Numpy is enough for doing ML and Data science
+ 
+ below are written in Numpy
+ 
+ 
+ 
+ Statistics
+ 
+ array A 
+ 
+ Law of Large Numbers
+ 
+ Random Variables
+ 
+ 
+ Discrete   :  finate or countable number of values  = answer never will be precision 
+ Continuous :  fiding temperatures in a room is ( 23.2 ) = whose values have fractions 
+ 
+ Probability Mass Function 
+ 
+ Function which has Discrete data and their sum will be 1
+ 
+ 
+ Bernoulli Distribution
+ 
+ experiment which has only 2 outputs.
+ 
+ probability of 1 event is p(1)
+ probability of 2nd event is 1-p(1)
+ 
+ Binomial Distributoin Definition
+ 
+ m= number of trails
+ 
+ non-negative integer values
+ 
+ p[X=x] = n        x    n-x  : x=0,1,2, 3, ...n   
+            c    P    q
+              x       0 ; else where
+              
+              
+ A police fires 6 bullets on a dacoit. the pro that the dcoit will be killed by a bullet is 0.3
+ 
+ what is the probability that the dacoit is still avalive
+ 
+ 1 :  0.3 
+ 
+ nCr = n! / r! * (n - r)!
+ 
+ p[0] =  
+ 
+ 
+ 
+ C programs can be imported to python -> convert to c program to python using cython
+ which has exten of pyc
+ 
+ cycle learn 
+ pandas 
+ 
+ 
+ 
+ 2 5 0.7
+ 
+ 1 8 0.3
+ 
+ Problems:
+ 
+ np.random.binomial(5, 0.2, size=10)
+ 
+ 
+ the chance of attendance of coming tommorrow is 90% and total we have 18 people , attendance greather >=16
+ 
+ print( binomial(18,16,0.9)+ binomial(18,17,0.9)+ binomial(18,17,0.9));
+ 
+ 1 per day 5 cigra
+ chance of less 3 
+ 
+ if we don't know n in binomial then we don't use that instead of we use Poisson Distribution
+ 
+ Poison Distribution [ Number of trails are pretty large ]
+ 
+ How many maruthis are going in each day in this road
+ 
+ here n we don't know
+ 
+ it is subset of binomial technique , it helps ' n is abstract ' = n is infinate
+ 
+ p(x) = p(X=x) =  e \
+ 
+ 3=2.72
+ 
+ 
+ if the probability that an individual suffers a bad reaction from an injection of  a given serum is 0.0001, 
+ determine the probability that out of 500 individuals
+ n=500
+ p =0.001
+ 
+ exactly = 3
+ morethan 2 individuals suffer from bad reaction 
+ 
+ 
+Average n times p
+
+A tea vendor sells 20(lamda) cups per hour
+what is probability he sells more than 25 cups of tea per 
+
+
+2.71828**(-20)*(20)*(x)/x!
+
+
+
+Avg = 500
+
+lamda , Avg = 500
+
+s=10000000
+lam=500
+p=np.random.poisson(lam=lam, size=s)
+len(p[p>=52=])/s
+
+0.1913161
+
+
+0.6 kicks
+
+times (n) 
+
+use poision
+
+
+
+Continuous Random number
+
+we need to know lower limit and upper limit
+
+25 C - 45 C
+
+probability of 35 C
+
+
+probability density function
+
+f(x) = Ax**3,  0<= x <= 1
+i. determine A
+
+ii. p[0.2 <X<0.5 ]
+
+0 to 1 [ Integration ]
+
+
+Normal / Gaussian Distribution
+
+mu = mean
+sigma = standard deviation
+
+
+f(x) = 1/ ( signma* sqrt(2 * pie) * e **(x-mu)**2/ 2* sd
+
+In an university the mean weight of 1000 male students is 60 kg and standard devication is 16 kg
+
+less than 55 kg
+
+sg = 16 kg
+n=1000
+w = 60
+
+
+scipy functions
+
+
+
+Bernoulli Distribution:
+
+Experiments where the outcomes can be divided into two categories with refrence to presence or absence of a particular attribue or characteristic
+
+Binomial Distribution
+
+Is applicable for random experiment comprising a finite number (n) of independent Bernoulli trails having the constant probability of success for each trial
+
+
+
+
+

@@ -1,0 +1,20 @@
+kind: ReplicaSet                                      # Defines the object to be ReplicaSet
+apiVersion: apps/v1                               # Replicaset is not available on v1
+metadata:
+  name: myreplicaset
+spec:
+  replicas: 2                                              # this element defines the desired number of pods
+  selector:                                                # tells the controller which pods to watch/belong to this Replication Set 
+    matchExpressions:                             # these must match the labels 
+      - {key: myname, operator: In, values: [adam, adamm, aadam]}
+      - {key: env, operator: NotIn, values: [production]}
+  template:                                              # template element defines a template to launch a new pod
+    metadata: 
+      name: testpod7
+      labels:                                                # selector values need to match the labels values specified in the pod template
+        myname: adam
+    spec:
+     containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-Adam; sleep 5 ; done"]

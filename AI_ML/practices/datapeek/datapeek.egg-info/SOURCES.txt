@@ -1,0 +1,10 @@
+setup.py
+datapeek/__init__.py
+datapeek/gitignore.py
+datapeek/utilities.py
+datapeek.egg-info/PKG-INFO
+datapeek.egg-info/SOURCES.txt
+datapeek.egg-info/dependency_links.txt
+datapeek.egg-info/not-zip-safe
+datapeek.egg-info/requires.txt
+datapeek.egg-info/top_level.txt

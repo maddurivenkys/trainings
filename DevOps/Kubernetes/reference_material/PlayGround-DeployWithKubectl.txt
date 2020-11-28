@@ -1,0 +1,68 @@
+Deployment explored using kubectl
+------------------------------
+
+wget  https://k8s.io/examples/controllers/nginx-deployment.yaml
+kubectl apply -f nginx-deployment.yaml
+
+Run following to check if the Deployment was created/status
+kubectl rollout status deployment.v1.apps/nginx-deployment
+kubectl get deployments
+
+To see the ReplicaSet (rs) created by the Deployment, run
+kubectl get rs
+
+
+To see the labels automatically generated for each Pod, run 
+kubectl get pods --show-labels
+
+
+Pod-template-hash label
+Caution: Do not change this label.
+The pod-template-hash label is added by the Deployment controller to every ReplicaSet that a Deployment creates or adopts.
+This label ensures that child ReplicaSets of a Deployment do not overlap.
+
+Updating a deployment
+kubectl --record deployment.apps/nginx-deployment set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
+(or)
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record
+(or)
+kubectl edit deployment.v1.apps/nginx-deployment
+
+Run following to see that the Deployment updated the Pods by creating a new ReplicaSet and scaling it up to 3 replicas, as well as scaling down the old ReplicaSet to 0 replicas,
+kubectl get rs
+
+To show only the new Pods
+kubectl get pods
+
+Get details of your Deployment
+kubectl describe deployments
+
+
+Rolling back a deployment
+Suppose that you made a typo while updating the Deployment, by putting the image name as nginx:1.161 instead of nginx:1.16.1
+kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.161 --record=true
+kubectl rollout status deployment.v1.apps/nginx-deployment
+kubectl get rs
+kubectl get pods
+kubectl describe deployment
+kubectl rollout history deployment.v1.apps/nginx-deployment
+kubectl get events
+kubectl rollout undo deployment.v1.apps/nginx-deployment --to-revision=2
+kubectl get deployment nginx-deployment
+kubectl describe deployment nginx-deployment
+
+Scaling a Deployment
+kubectl scale deployment.v1.apps/nginx-deployment --replicas=10
+kubectl get rs
+kubectl get pods
+kubectl describe deployment
+
+
+Pause and resume a deployment
+kubectl get deploy
+kubectl rollout pause deployment.v1.apps/nginx-deployment
+kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
+kubectl rollout history deployment.v1.apps/nginx-deployment
+kubectl get rs
+kubectl rollout resume deployment.v1.apps/nginx-deployment
+kubectl get rs

@@ -1,0 +1,20 @@
+
+
+--create a folder "Ex1GitDemo" at your home directory /home/<enumber>
+mkdir Ex1GitDemo
+
+--switch to the newly created folder "Ex1GitDemo"
+
+cd Ex1GitDemo
+
+--Initialize the git repository
+
+--create file ExFile1.txt, Exfile2.txt and commit the changes to remote repository master branch
+
+--create branch ExB1 , checkin to branch ExB1 branch, create a file ExB1File1.txt and commit the changes to remote repository branch ExB1
+
+--create branch ExB2 , checkin to branch ExB2 branch, create a file ExB2File1.txt and commit the changes to remote repository branch ExB2
+
+----commands for reference
+
+
